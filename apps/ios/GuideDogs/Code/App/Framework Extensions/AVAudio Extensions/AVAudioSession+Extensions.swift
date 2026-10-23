@@ -66,3 +66,16 @@ extension AVAudioSession.ErrorCode: CustomStringConvertible {
         }
     }
 }
+
+extension AVAudioSession{
+    func usingBuiltInSpeaker() -> Bool{
+        let outputs = self.currentRoute.outputs
+        //This app should automatically have the most recent audio output in the first position of currentRoute.outputs
+        switch outputs[0].portType{
+        case .builtInSpeaker: return true
+        case .builtInReceiver: return true
+        default: return false
+        }
+    }
+    
+}
