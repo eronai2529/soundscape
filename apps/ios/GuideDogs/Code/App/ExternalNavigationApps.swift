@@ -32,9 +32,9 @@ enum ExternalNavigationApps: String, CaseIterable{
         let zoom = 10
         let escapedLabel = label.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) ?? "Location"
         switch self {
-            case .appleMaps: return URL(string: "https://maps.apple.com/?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)&z=\(zoom)&q=\(escapedLabel)")
-            case .googleMaps: return URL(string: "https://www.google.com/maps/search/?api=1&query=\(location.coordinate.latitude)%2C\(location.coordinate.longitude)")
-            case .waze: return URL(string: "https://www.waze.com/ul?ll=\(location.coordinate.latitude)%2C\(location.coordinate.longitude)&navigate=yes&zoom=\(zoom)")
+            case .appleMaps: return URL(string: "maps://?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)&z=\(zoom)&q=\(escapedLabel)")
+            case .googleMaps: return URL(string: "comgooglemaps://?q=\(location.coordinate.latitude)%2C\(location.coordinate.longitude)")
+            case .waze: return URL(string: "waze://?ll=\(location.coordinate.latitude)%2C\(location.coordinate.longitude)&navigate=yes&zoom=\(zoom)")
 
         }
     }

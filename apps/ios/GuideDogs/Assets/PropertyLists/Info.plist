@@ -75,6 +75,8 @@
 		<string>fastmail</string>
 		<string>x-dispatch</string>
 		<string>navilens</string>
+		<string>comgooglemaps</string>
+		<string>waze</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
